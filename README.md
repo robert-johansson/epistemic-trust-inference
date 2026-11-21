@@ -14,7 +14,7 @@ The paper treats epistemic trust (the capacity to treat communication as trustwo
 ## Quick start
 
 ```sh
-git clone --recurse-submodules https://github.com/robert-johansson/epistemic-trust-inference.git
+git clone https://github.com/robert-johansson/epistemic-trust-inference.git
 cd epistemic-trust-inference
 uv sync --frozen          # Python 3.14 and the exact package versions used for the paper (uv.lock)
 make check                # ~4 min: rerun every analysis and compare with the committed logs
@@ -31,7 +31,7 @@ make check                # ~4 min: rerun every analysis and compare with the co
 | `development/` | Informant model of Corriveau et al. (2009), fitted to their Table 2; descriptive baselines and held-out transfer; the two routes to the resistant pattern | §6 |
 | `figures/` | TikZ/pgfplots sources, exported data, export scripts and final PDFs of Figs 1–6 | Figs 1–6 |
 | `tools/` | `reproduce.py` (the check above) and `check_memo_idioms.py` (memo-mcp's idiom check of every memo program, with its log) | §2.3 |
-| `third_party/` | Barnby et al.'s repository (data, HBI fits, MATLAB outputs) as a git submodule pinned to commit `9f6d175` | §4 |
+| `third_party/` | The files of Barnby et al.'s repository (commit `9f6d175`) that the code reads, copied unchanged under their MIT licence, plus an extract of their large MATLAB output files; checksums in its README | §4 |
 
 ## Reproducibility levels
 
@@ -76,7 +76,7 @@ Then `make check` compares the downstream results with the committed logs. Timin
 
 ## Data and licences
 
-- **Intentions Game data** (Barnby et al., 2025, *eLife* 14:RP104008): openly shared by the authors under the MIT licence; used here through the pinned submodule. Ethics approval for the original study: Research Ethics Committee for Wales, 12/WA/0283. `intentions_game/reference.py` is a translation of the authors' MATLAB models; see `NOTICE`.
+- **Intentions Game data** (Barnby et al., 2025, *eLife* 14:RP104008): openly shared by the authors under the MIT licence. The files the code reads are copied unchanged into `third_party/` (with their licence and SHA-256 checksums), so this repository and its archived release are self-contained. Ethics approval for the original study: Research Ethics Committee for Wales, 12/WA/0283. `intentions_game/reference.py` is a translation of the authors' MATLAB models; see `NOTICE`.
 - **BART-ET** (Li et al., 2026): no data are used; the task's reported design is simulated (`advice_taking/ASSUMPTIONS.md`).
 - **Corriveau et al. (2009)**: the published group-level proportions of their Table 2, cited in the code.
 - **Licences**: code under the MIT licence (`LICENSE`); figures under CC BY 4.0 (`LICENSE-figures`).

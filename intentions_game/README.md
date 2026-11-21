@@ -1,6 +1,6 @@
 # Intentions Game: memo port, new models and re-analysis (Section 4)
 
-Data: Barnby et al. (2025), *eLife* 14:RP104008, through the submodule `../third_party/SocialTransfer_Barnby_etal_2024` (commit `9f6d175`, MIT licence). Run every script from this folder with `uv run python -I <script>`.
+Data: Barnby et al. (2025), *eLife* 14:RP104008, copied from their repository (commit `9f6d175`, MIT licence) into `../third_party/SocialTransfer_Barnby_etal_2024`. Run every script from this folder with `uv run python -I <script>`.
 
 ## Files
 

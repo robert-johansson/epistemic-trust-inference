@@ -3,9 +3,11 @@ Third-party material
 
 1. Barnby et al. (2025), "Self-other generalisation shapes social interaction and is disrupted in
    borderline personality disorder", eLife 14:RP104008.
-   - The data, HBI fits and MATLAB outputs are used through the git submodule
-     third_party/SocialTransfer_Barnby_etal_2024 (https://github.com/josephmbarnby/SocialTransfer_Barnby_etal_2024,
-     commit 9f6d175).
+   - The data (Data/intent_dat.csv), HBI fits (FittedFiles/hbi_g*_BPD.mat) and participant-order files
+     (Data_Simulated/data_sim_g*.mat) are copied unchanged into third_party/SocialTransfer_Barnby_etal_2024
+     from https://github.com/josephmbarnby/SocialTransfer_Barnby_etal_2024, commit 9f6d175, with their LICENSE.
+     Data_Simulated/full_sim_extract.npz holds fields extracted from their four MATLAB output files
+     (tools/extract_matlab_outputs.py); checksums of all originals are in that folder's README.
    - intentions_game/reference.py is a line-by-line NumPy translation of the authors' MATLAB models, and
      intentions_game/memo_models.py ports the same models to memo. Their licence:
 

@@ -77,7 +77,15 @@ def load_hbi(group, recovery=False):
 
 
 def load_full_sim(group, suffix=""):
-    """Per-participant MATLAB outputs saved by SimulateData.m (fitted params, simulated actions)."""
-    f = sio.loadmat(UPSTREAM / "Data_Simulated" / f"full_sim_{group}{suffix}.mat",
-                    squeeze_me=True, struct_as_record=False)
-    return f["F"], list(f["results"])
+    """Per-participant MATLAB outputs saved by SimulateData.m. Reads the original .mat file when present;
+    otherwise the extract of the fields validate_reference.py uses (tools/extract_matlab_outputs.py)."""
+    path = UPSTREAM / "Data_Simulated" / f"full_sim_{group}{suffix}.mat"
+    if path.exists():
+        f = sio.loadmat(path, squeeze_me=True, struct_as_record=False)
+        return f["F"], list(f["results"])
+    from types import SimpleNamespace
+    z = onp.load(UPSTREAM / "Data_Simulated" / "full_sim_extract.npz")
+    key = f"full_sim_{group}{suffix}"
+    fields = ("prob1", "prob2", "prob3", "simA", "beta_marg2b")
+    n = z[f"{key}__prob1"].shape[0]
+    return None, [SimpleNamespace(**{f: z[f"{key}__{f}"][i] for f in fields}) for i in range(n)]
