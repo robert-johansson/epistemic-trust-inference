@@ -1,0 +1,16 @@
+n = 103
+
+Accuracy A: BPD median 0.778 vs controls 0.815 (Mann-Whitney p = 0.111)
+  R1 vs A: BPD rho +0.08 (p=0.600); Controls rho +0.35 (p=0.011); group-controlled +0.23 (p=0.018)
+  R2 vs A: BPD rho +0.01 (p=0.944); Controls rho +0.48 (p=0.000); group-controlled +0.26 (p=0.008)
+  BPD     : intent-represented (R1>0, n=18) median 0.796 vs competitiveness (n=32) 0.759 (p = 0.472)
+  Controls: intent-represented (R1>0, n=35) median 0.852 vs competitiveness (n=18) 0.741 (p = 0.022)
+
+Accuracy A2: BPD median 0.778 vs controls 0.815 (Mann-Whitney p = 0.137)
+  R1 vs A2: BPD rho -0.01 (p=0.928); Controls rho +0.29 (p=0.034); group-controlled +0.15 (p=0.141)
+  R2 vs A2: BPD rho +0.03 (p=0.839); Controls rho +0.41 (p=0.002); group-controlled +0.23 (p=0.019)
+  BPD     : intent-represented (R1>0, n=18) median 0.796 vs competitiveness (n=32) 0.759 (p = 0.648)
+  Controls: intent-represented (R1>0, n=35) median 0.852 vs competitiveness (n=18) 0.778 (p = 0.122)
+
+Share intent-represented (R1 > 0): BPD 36%, controls 66%
+Exploratory: R1 vs HI rating: rho +0.17 (p=0.082); group-controlled +0.17 (p=0.091)

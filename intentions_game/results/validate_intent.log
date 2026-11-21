@@ -1,0 +1,14 @@
+00Etx6       max|p2 diff| = 5.55e-16   E[harm] 5.145/5.145   E[omega] 13.708/13.708   P(rho<0) 1.0000/1.0000  (memo/numpy)
+00Etx6       max|p2 diff| = 6.66e-16   E[harm] 12.805/12.805   E[omega] 16.790/16.790   P(rho<0) 1.0000/1.0000  (memo/numpy)
+00Etx6       max|p2 diff| = 3.33e-16   E[harm] 4.428/4.428   E[omega] 6.572/6.572   P(rho<0) 1.0000/1.0000  (memo/numpy)
+v2AdTI       max|p2 diff| = 6.11e-16   E[harm] 20.046/20.046   E[omega] 18.291/18.291   P(rho<0) 1.0000/1.0000  (memo/numpy)
+v2AdTI       max|p2 diff| = 6.66e-16   E[harm] 14.206/14.206   E[omega] 16.653/16.653   P(rho<0) 1.0000/1.0000  (memo/numpy)
+v2AdTI       max|p2 diff| = 4.44e-16   E[harm] 5.084/5.084   E[omega] 6.535/6.535   P(rho<0) 1.0000/1.0000  (memo/numpy)
+2VnUegyFae   max|p2 diff| = 3.89e-16   E[harm] 1.511/1.511   E[omega] 15.158/15.158   P(rho<0) 0.9797/0.9797  (memo/numpy)
+2VnUegyFae   max|p2 diff| = 6.66e-16   E[harm] 3.239/3.239   E[omega] 17.829/17.829   P(rho<0) 0.9993/0.9993  (memo/numpy)
+2VnUegyFae   max|p2 diff| = 3.33e-16   E[harm] 0.898/0.898   E[omega] 11.309/11.309   P(rho<0) 0.8168/0.8168  (memo/numpy)
+zjrwpk9lxT   max|p2 diff| = 3.89e-16   E[harm] 2.692/2.692   E[omega] 13.488/13.488   P(rho<0) 0.9999/0.9999  (memo/numpy)
+zjrwpk9lxT   max|p2 diff| = 6.66e-16   E[harm] 5.481/5.481   E[omega] 14.530/14.530   P(rho<0) 1.0000/1.0000  (memo/numpy)
+zjrwpk9lxT   max|p2 diff| = 3.33e-16   E[harm] 1.764/1.764   E[omega] 5.995/5.995   P(rho<0) 0.9840/0.9840  (memo/numpy)
+
+WORST: predictions 6.66e-16, attributions 7.11e-15 -> AGREE

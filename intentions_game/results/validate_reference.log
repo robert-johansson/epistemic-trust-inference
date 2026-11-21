@@ -1,0 +1,10 @@
+full_sim_g1.mat, M4, 50 participants, real responses (sim = 0):
+   max |P(option 1) diff| per trial = 4.63e-13; max |total log-likelihood diff| = 5.62e-12; max |partner posterior marginal diff| = 2.11e-15
+full_sim_g2.mat, M1, 53 participants, real responses (sim = 0):
+   max |P(option 1) diff| per trial = 2.22e-13; max |total log-likelihood diff| = 7.47e-12; max |partner posterior marginal diff| = 1.92e-15
+full_sim_g1_M3.mat, M3, 50 participants, simulated actions (sim = 1):
+   max |P(option 1) diff| per trial = 4.47e-13; max |partner posterior marginal diff| = 1.64e-15
+full_sim_g2_M3.mat, M3, 53 participants, simulated actions (sim = 1):
+   max |P(option 1) diff| per trial = 5.18e-13; max |partner posterior marginal diff| = 2.83e-15
+
+WORST: per trial 5.18e-13, total log-likelihood 7.47e-12 -> AGREE

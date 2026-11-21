@@ -1,0 +1,81 @@
+% Fig. 2 -- The Intentions Game and its models (Sections 4.1-4.2). Pure TikZ; build: xelatex.
+% (A) Task timeline with what each part measures; (B) the model space: partner representation x
+% direction of self-other transfer. New models (H, I, C) are shaded. No hue (reserved for entities).
+\documentclass[border=0pt]{standalone}
+\input{figstyle}
+\newcommand{\sub}{\ticksize\color{inkSecondary}}
+\tikzset{
+  phase/.style={draw=axisLine, line width=0.5pt, fill=white, rounded corners=3pt, align=center,
+                font=\figfont, text=inkPrimary, inner sep=4pt, minimum height=40pt, anchor=west},
+  flow/.style={-{Stealth[length=4pt, width=3.6pt]}, line width=0.7pt, draw=inkSecondary},
+  measure/.style={font=\ticksize, text=inkSecondary, align=center, anchor=north, inner sep=1pt},
+  model/.style={draw=axisLine, line width=0.5pt, fill=white, rounded corners=2.5pt, font=\figfont,
+                text=inkPrimary, inner sep=2.5pt, minimum width=24pt, minimum height=15pt},
+  newmodel/.style={model, draw=inkPrimary, fill=bandFill, line width=0.7pt},
+  newtag/.style={font=\fontsize{6}{7}\selectfont, text=inkSecondary, anchor=south west, inner sep=0.5pt},
+  colhead/.style={font=\figfont, text=inkPrimary, align=center, anchor=south, inner sep=1pt},
+  rowhead/.style={font=\figfont, text=inkPrimary, align=left, anchor=west, inner sep=1pt},
+  cell/.style={draw=gridLine, line width=0.5pt},
+}
+
+\begin{document}
+\figfont
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (504pt,232pt);
+
+  % ======================= A: the task =======================
+  \node[phase, text width=104pt] (p1) at (1pt,200pt)
+    {\textbf{Phase 1} \(\cdot\) 36 trials\\[-1pt]{\sub you divide points between\\yourself and a partner}};
+  \node[phase, text width=150pt] (p2) at ([xshift=14pt]p1.east)
+    {\textbf{Phase 2} \(\cdot\) 54 trials\\[-1pt]{\sub a new partner divides points between itself\\and you; you predict each choice (feedback)}};
+  \node[phase, text width=58pt, fill=bandFill] (r) at ([xshift=14pt]p2.east)
+    {\textbf{Ratings}\\[-1pt]{\sub harmful intent,\\self-interest}};
+  \node[phase, text width=104pt] (p3) at ([xshift=14pt]r.east)
+    {\textbf{Phase 3} \(\cdot\) 36 trials\\[-1pt]{\sub you divide points again\\(another new partner)}};
+  \draw[flow] (p1) -- (p2);  \draw[flow] (p2) -- (r);  \draw[flow] (r) -- (p3);
+
+  \node[measure] at ([yshift=-3pt]p1.south) {your own preferences};
+  \node[measure] at ([yshift=-3pt]p2.south) {prior over the partner (generalizable);\\learning its preferences or intent (trustworthy)};
+  \node[measure] at ([yshift=-3pt]r.south) {test of intent\\(not fitted)};
+  \node[measure] at ([yshift=-3pt]p3.south) {shift toward the partner\\(personally relevant)};
+
+  % ======================= B: the model space =======================
+  % grid geometry: row-header column 0..118pt; four columns of 96.5pt; rows of 44pt
+  \def\xa{118pt}\def\cw{96pt}
+  \def\yTop{112pt}\def\yMid{69pt}\def\yBot{26pt}
+  % cells
+  \foreach \c in {0,1,2,3} {
+    \draw[cell] ($(\xa,\yTop)+(\c*\cw,0)$) rectangle ($(\xa,\yMid)+(\c*\cw+\cw,0)$);
+    \draw[cell] ($(\xa,\yMid)+(\c*\cw,0)$) rectangle ($(\xa,\yBot)+(\c*\cw+\cw,0)$);
+  }
+  % column headers
+  \node[colhead] at ($(\xa,\yTop)+(0.5*\cw,3pt)$) {No transfer\\{\sub (uncoupled)}};
+  \node[colhead] at ($(\xa,\yTop)+(1.5*\cw,3pt)$) {Self \(\rightarrow\) other only\\{\sub (self-insertion)}};
+  \node[colhead] at ($(\xa,\yTop)+(2.5*\cw,3pt)$) {Other \(\rightarrow\) self only\\{\sub (contagion)}};
+  \node[colhead] at ($(\xa,\yTop)+(3.5*\cw,3pt)$) {Both directions\\{\sub (coupled)}};
+  % row headers
+  \node[rowhead] at (0pt,90.5pt) {Partner represented by\\competitiveness {\sub (\(\alpha\), \(\beta\))}};
+  \node[rowhead] at (0pt,47.5pt)  {Partner represented by\\intent {\sub (\(\omega\), \(\rho\))}};
+
+  % competitiveness row
+  \node[model] at ($(\xa,90.5pt)+(0.5*\cw,0)$) {M4};
+  \node[model] at ($(\xa,90.5pt)+(1.5*\cw,0)$) {M2};
+  \node[model] at ($(\xa,90.5pt)+(2.5*\cw,0)$) {M3};
+  \node[model]    (m1) at ($(\xa,90.5pt)+(3.5*\cw-27pt,0)$) {M1};
+  \node[model]    (mb) at ($(\xa,90.5pt)+(3.5*\cw,0)$) {Beta};
+  \node[newmodel] (mh) at ($(\xa,90.5pt)+(3.5*\cw+27pt,0)$) {H};
+  % intent row
+  \node[newmodel] (mi) at ($(\xa,47.5pt)+(0.5*\cw,0)$) {I};
+  \node[font=\figfont, text=inkMuted] at ($(\xa,47.5pt)+(1.5*\cw,0)$) {--};
+  \node[font=\figfont, text=inkMuted] at ($(\xa,47.5pt)+(2.5*\cw,0)$) {--};
+  \node[newmodel] (mc) at ($(\xa,47.5pt)+(3.5*\cw,0)$) {C};
+
+  % key
+  \node[newmodel, minimum width=12pt, minimum height=9pt, inner sep=0pt] (key) at (125pt,10pt) {};
+  \node[font=\ticksize, text=inkSecondary, anchor=west] at ([xshift=3pt]key.east) {new in this paper};
+
+  % ======================= panel letters =======================
+  \node[panel label] at (0pt,232pt) {A};
+  \node[panel label] at (0pt,146pt) {B};
+\end{tikzpicture}
+\end{document}

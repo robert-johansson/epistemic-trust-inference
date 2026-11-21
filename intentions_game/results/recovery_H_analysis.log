@@ -1,0 +1,31 @@
+n = 103; converged with positive-definite Hessian: 1.000
+
+parameter          Pearson r  Spearman     bias     RMSE  true SD
+a (alpha mean)          0.64      0.68    -0.26     5.78     6.93
+b (beta mean)           0.93      0.86     1.88     3.44     5.37
+log v_a                -0.00     -0.04    -0.31     1.09     0.68
+log v_b                 0.46      0.10    -0.57     0.98     0.76
+log tau_a               0.42      0.37    -0.25     1.12     1.06
+log tau_b               0.87      0.80    -0.12     0.61     1.07
+
+Trade-offs: correlation of recovery errors (recovered - true) between parameters
+                 a mean)     b mean)     log v_a     log v_b   log tau_a   log tau_b
+a (alpha me         1.00       -0.51        0.64        0.60        0.40       -0.03
+b (beta mea        -0.51        1.00       -0.49       -0.69       -0.27       -0.07
+log v_a             0.64       -0.49        1.00        0.49        0.28       -0.04
+log v_b             0.60       -0.69        0.49        1.00        0.47        0.07
+log tau_a           0.40       -0.27        0.28        0.47        1.00        0.03
+log tau_b          -0.03       -0.07       -0.04        0.07        0.03        1.00
+
+Cross-recovery: Spearman(true parameter, recovered parameter)
+               rec mean)   rec mean)     rec v_a     rec v_b   rec tau_a   rec tau_b
+true mean)          0.68       -0.30        0.02       -0.31        0.03        0.40
+true mean)          0.18        0.86        0.30        0.30       -0.25       -0.56
+true v_a           -0.10       -0.49       -0.04        0.04        0.31        0.61
+true v_b           -0.21       -0.55       -0.12        0.10        0.30        0.60
+true tau_a          0.08       -0.53       -0.18       -0.03        0.37        0.64
+true tau_b          0.07       -0.70       -0.15       -0.31        0.24        0.80
+
+Mean log tau (coupling) recovery: Spearman = 0.75; Pearson = 0.78
+  BPD-derived      (n = 50): Spearman = 0.15
+  control-derived  (n = 53): Spearman = 0.40

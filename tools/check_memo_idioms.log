@@ -1,0 +1,32 @@
+
+=== advice_taking/bart_et_advisor.py  (2 memo models: choose_pumps, update_reliability)
+VERDICT: Success! Defined memo functions: choose_pumps, update_reliability
+STYLE:   clean — 2 model(s), no findings
+
+=== intentions_game/memo_models.py  (6 memo models: own_choice, partner_choice, predict_partner, own_choice_beta, partner_choice_beta, predict_partner_beta)
+VERDICT: Success! Defined memo functions: own_choice, partner_choice, predict_partner, own_choice_beta, partner_choice_beta, predict_partner_beta
+STYLE:   clean — 6 model(s), no findings
+
+=== intentions_game/intent.py  (10 memo models: own_choice, partner_choice, predict_partner, own_choice_beta, partner_choice_beta, predict_partner_beta, intent_choice, predict_intent, attribute_intent, own_choice_intent)
+VERDICT: Success! Defined memo functions: own_choice, partner_choice, predict_partner, own_choice_beta, partner_choice_beta, predict_partner_beta, intent_choice, predict_intent, attribute_intent, own_choice_intent
+STYLE:   NOTE  intent_choice: decision-theoretic construct(s) ['EU', 'wants'] — fine if the agent genuinely optimizes; forbidden in utility-free (cybernetic) models of the mind
+         NOTE  predict_intent: decision-theoretic construct(s) ['EU', 'wants'] — fine if the agent genuinely optimizes; forbidden in utility-free (cybernetic) models of the mind
+         NOTE  own_choice_intent: decision-theoretic construct(s) ['EU', 'wants'] — fine if the agent genuinely optimizes; forbidden in utility-free (cybernetic) models of the mind
+
+=== intentions_game/hier_spec.py  (3 memo models: partner_likelihood, predict_partner, own_choice)
+VERDICT: Success! Defined memo functions: partner_likelihood, predict_partner, own_choice
+STYLE:   clean — 3 model(s), no findings
+
+=== intentions_game/hier_intent_spec.py  (3 memo models: predict_partner, own_choice, partner_likelihood)
+VERDICT: Success! Defined memo functions: predict_partner, own_choice, partner_likelihood
+STYLE:   NOTE  predict_partner: decision-theoretic construct(s) ['EU', 'wants'] — fine if the agent genuinely optimizes; forbidden in utility-free (cybernetic) models of the mind
+         NOTE  own_choice: decision-theoretic construct(s) ['EU', 'wants'] — fine if the agent genuinely optimizes; forbidden in utility-free (cybernetic) models of the mind
+         NOTE  partner_likelihood: decision-theoretic construct(s) ['EU', 'wants'] — fine if the agent genuinely optimizes; forbidden in utility-free (cybernetic) models of the mind
+
+=== development/corriveau_trust.py  (3 memo models: ask, endorse, update)
+VERDICT: Success! Defined memo functions: ask, endorse, update
+STYLE:   NOTE  endorse: decision-theoretic construct(s) ['EU', 'wants'] — fine if the agent genuinely optimizes; forbidden in utility-free (cybernetic) models of the mind
+
+=== development/corriveau_routes.py  (4 memo models: ask, endorse, update, believes)
+VERDICT: Success! Defined memo functions: ask, endorse, update, believes
+STYLE:   NOTE  endorse: decision-theoretic construct(s) ['EU', 'wants'] — fine if the agent genuinely optimizes; forbidden in utility-free (cybernetic) models of the mind

@@ -1,0 +1,87 @@
+% figstyle.tex -- shared style for all figures of "Epistemic Trust as Inference About Other Minds".
+% Compile each figure with xelatex (standalone class). Full-width figures are exactly 504pt wide,
+% the \textwidth of the Frontiers template, so they are included at 100% and never rescaled.
+%
+% Colour roles (validated with the dataviz skill's validate_palette.js on a white surface):
+%   groups   : controls = slot 1 blue #2a78d6, BPD = slot 2 orange #eb6834 (all-pairs PASS)
+%   stances  : trusting = green #008300, mistrusting = violet #6250d6 (all-pairs PASS; tritan 7.6,
+%              so always paired with a second cue: dash for rigid stances, plus labels)
+%   models   : theoretical curves in primary ink (no hue, so hues stay reserved for entities)
+%   chrome   : ink #0b0b0b / #52514e / #898781, gridline #e1e0d9, axis #c3c2b7 (reference palette)
+
+\usepackage{fontspec}
+% Fonts are loaded by file name: XeTeX then finds them in TeX Live without system registration.
+\setmainfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\renewcommand{\familydefault}{\sfdefault}
+\hyphenpenalty=10000 \exhyphenpenalty=10000   % figures never hyphenate
+\usepackage{unicode-math}
+\setmathfont{FiraMath-Regular.otf}[Scale=MatchLowercase]   % sans-serif math to match the text
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc,fit,backgrounds,arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots,fillbetween}
+
+% ---- colours ---------------------------------------------------------------
+\definecolor{inkPrimary}{HTML}{0B0B0B}
+\definecolor{inkSecondary}{HTML}{52514E}
+\definecolor{inkMuted}{HTML}{898781}
+\definecolor{gridLine}{HTML}{E1E0D9}
+\definecolor{axisLine}{HTML}{C3C2B7}
+\definecolor{bandFill}{HTML}{F0EFEC}
+\definecolor{groupControls}{HTML}{2A78D6}
+\definecolor{groupBPD}{HTML}{EB6834}
+\definecolor{stanceTrust}{HTML}{008300}
+\definecolor{stanceMistrust}{HTML}{6250D6}
+
+% ---- type sizes (true size: figures are never rescaled) --------------------
+\newcommand{\figfont}{\fontsize{8}{9.6}\selectfont}
+\newcommand{\ticksize}{\fontsize{7}{8.4}\selectfont}
+\newcommand{\panelfont}{\fontsize{9}{10.8}\selectfont\bfseries}
+
+% ---- line weights -----------------------------------------------------------
+\tikzset{
+  hairline/.style={line width=0.4pt},
+  dataline/.style={line width=1.3pt, line cap=round, line join=round},
+  rigid/.style={dash pattern=on 3.2pt off 2.2pt},
+  panel label/.style={font=\panelfont, text=inkPrimary, anchor=north west, inner sep=0pt},
+  note/.style={font=\ticksize, text=inkSecondary, inner sep=1pt},
+}
+
+% ---- row filter: plot only the rows whose column #1 equals #2 (e.g. group = BPD) ----
+\pgfplotsset{
+  only rows/.style 2 args={
+    unbounded coords=discard,
+    x filter/.append code={%
+      \edef\figRowValue{\thisrow{#1}}\edef\figWanted{#2}%
+      \ifx\figRowValue\figWanted\else\def\pgfmathresult{inf}\fi},
+  },
+  group dots/.style={only marks, mark=*, mark size=1.75pt,
+    mark options={draw=white, line width=0.5pt, fill=#1}, color=#1},
+}
+
+% ---- the shared axis style --------------------------------------------------
+\pgfplotsset{
+  paper axis/.style={
+    scale only axis,
+    axis lines*=left,
+    axis line style={axisLine, line width=0.4pt},
+    every tick/.style={axisLine, line width=0.4pt},
+    tick align=outside,
+    major tick length=2.5pt,
+    minor tick length=1.5pt,
+    tick label style={font=\ticksize, text=inkSecondary},
+    label style={font=\figfont, text=inkPrimary},
+    title style={font=\figfont, text=inkPrimary, align=center},
+    grid=major,
+    major grid style={gridLine, line width=0.4pt},
+    clip mode=individual,
+    legend style={draw=none, fill=none, font=\ticksize, text=inkSecondary},
+    legend cell align=left,
+    every axis plot/.append style={dataline},
+  },
+}

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper (and Barnby et al., 2025, for the data)."
+title: "Epistemic trust as inference about other minds: code and results"
+type: software
+authors:
+  - family-names: Johansson
+    given-names: Robert
+    affiliation: "Department of Psychology, Stockholm University"
+license: MIT
+repository-code: "https://github.com/robert-johansson/epistemic-trust-inference"
+version: "1.0.0"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Johansson
+      given-names: Robert
+  title: "Epistemic Trust as Inference About Other Minds: A Computational Account of How It Is Disrupted and Restored"
+  journal: "Frontiers in Psychiatry"
+  status: in-preparation

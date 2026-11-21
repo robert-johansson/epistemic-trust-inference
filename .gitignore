@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+build/
+figures/build/
+*.aux
+*.log.tmp
+.DS_Store

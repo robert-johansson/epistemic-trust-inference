@@ -1,0 +1,65 @@
+% Fig. 5 -- The form of the theory of others (Section 4.6).
+% Data: data/fig5_families.csv, data/fig5_splithalf.csv (scripts/export_fig5_form.py). Build: xelatex.
+\documentclass[border=0pt]{standalone}
+\input{figstyle}
+\input{data/fig5_rows.tex}
+
+\begin{document}
+\figfont
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (504pt,210pt);
+
+  % ======================= A: family-level shares =======================
+  % rows (y): 4 = BPD intent, 3 = Controls intent, 1.6 = BPD coupled, 0.6 = Controls coupled
+  \begin{axis}[paper axis, name=A, at={(54pt,46pt)}, anchor=south west,
+      width=160pt, height=118pt,
+      xmin=0, xmax=1, ymin=0.05, ymax=4.95,
+      xtick={0,0.25,0.5,0.75,1}, xticklabels={0,.25,.50,.75,1},
+      ytick={4,3,1.6,0.6}, yticklabels={BPD,Controls,BPD,Controls},
+      ymajorgrids=false, xmajorgrids=true,
+      y axis line style={draw=none}, ytick style={draw=none},
+      xlabel={Estimated share of the group}, xlabel style={yshift=2pt},
+      title={Family-level comparison\\{\color{inkSecondary}\ticksize 95\% intervals unprotected; pxp protected (family shown)}},
+    ]
+    \addplot[hairline, inkMuted, forget plot] coordinates {(0.5,0.05) (0.5,4.95)};
+    % section headers
+    \node[font=\figfont, text=inkPrimary, anchor=south west, fill=white, inner sep=1pt, xshift=-52pt] at (axis cs:0,4.42) {Partner represented by intent};
+    \node[font=\figfont, text=inkPrimary, anchor=south west, fill=white, inner sep=1pt, xshift=-52pt] at (axis cs:0,2.02) {Self and other coupled};
+    % intervals and estimates: generated from data/fig5_families.csv (data/fig5_rows.tex)
+    \foreach \y/\s/\lo/\hi/\p/\col in \figfiverows {
+      \edef\row{%
+        \noexpand\addplot[\col, line width=1.3pt, forget plot] coordinates {(\lo,\y) (\hi,\y)};
+        \noexpand\addplot[only marks, mark=*, mark size=2.3pt, mark options={fill=\col, draw=white, line width=0.7pt}, forget plot] coordinates {(\s,\y)};
+        \noexpand\node[note, text=inkSecondary, anchor=west] at (axis cs:\hi,\y) {\noexpand\(\noexpand\mathrm{pxp}\ \p\noexpand\)};}
+      \row
+    }
+  \end{axis}
+
+  % ======================= B: split-half =======================
+  \begin{axis}[paper axis, name=B, at={(320pt,46pt)}, anchor=south west,
+      width=176pt, height=118pt,
+      xmin=-12.5, xmax=8.5, ymin=0.26, ymax=1.03,
+      xtick={-10,-5,0,5}, ytick={0.4,0.6,0.8,1}, yticklabels={.40,.60,.80,1},
+      xmajorgrids=false,
+      xlabel={Log Bayes factor, C vs.\ H (trials 1--27)}, xlabel style={yshift=-9pt},
+      ylabel={Accuracy, trials 28--54}, ylabel style={yshift=-2pt},
+      title={Early representation, later accuracy\\{\color{inkSecondary}\ticksize \(r_s = .26\), controlling for group}},
+    ]
+    \addplot[hairline, inkMuted, forget plot] coordinates {(0,0.26) (0,1.03)};
+    \addplot[group dots=groupControls, only rows={group}{Controls}] table[x=logbf_C_H, y=accuracy_28_54, col sep=comma] {data/fig5_splithalf.csv};
+    \addplot[group dots=groupBPD, only rows={group}{BPD}]           table[x=logbf_C_H, y=accuracy_28_54, col sep=comma] {data/fig5_splithalf.csv};
+  \end{axis}
+
+  \node[note, anchor=north west] at ([yshift=-14pt]B.south west) {\(\leftarrow\) competitiveness};
+  \node[note, anchor=north east] at ([yshift=-14pt]B.south east) {intent \(\rightarrow\)};
+
+  % ======================= legend and panel letters =======================
+  \node[circle, fill=groupControls, draw=white, line width=0.5pt, inner sep=1.75pt] (kC) at (196pt,202pt) {};
+  \node[note, text=inkSecondary, anchor=west] (tC) at ([xshift=1pt]kC.east) {Controls (\(n = 53\))};
+  \node[circle, fill=groupBPD, draw=white, line width=0.5pt, inner sep=1.75pt] (kB) at ([xshift=12pt]tC.east) {};
+  \node[note, text=inkSecondary, anchor=west] at ([xshift=1pt]kB.east) {BPD (\(n = 50\))};
+
+  \node[panel label] at (0pt,186pt) {A};
+  \node[panel label] at (270pt,186pt) {B};
+\end{tikzpicture}
+\end{document}

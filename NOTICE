@@ -1,0 +1,38 @@
+Third-party material
+====================
+
+1. Barnby et al. (2025), "Self-other generalisation shapes social interaction and is disrupted in
+   borderline personality disorder", eLife 14:RP104008.
+   - The data, HBI fits and MATLAB outputs are used through the git submodule
+     third_party/SocialTransfer_Barnby_etal_2024 (https://github.com/josephmbarnby/SocialTransfer_Barnby_etal_2024,
+     commit 9f6d175).
+   - intentions_game/reference.py is a line-by-line NumPy translation of the authors' MATLAB models, and
+     intentions_game/memo_models.py ports the same models to memo. Their licence:
+
+     MIT License
+     
+     Copyright (c) 2024 Joseph M Barnby
+     
+     Permission is hereby granted, free of charge, to any person obtaining a copy
+     of this software and associated documentation files (the "Software"), to deal
+     in the Software without restriction, including without limitation the rights
+     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+     copies of the Software, and to permit persons to whom the Software is
+     furnished to do so, subject to the following conditions:
+     
+     The above copyright notice and this permission notice shall be included in all
+     copies or substantial portions of the Software.
+     
+     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+     SOFTWARE.
+
+2. Corriveau et al. (2009), Child Development 80(3), 750-761: the group-level proportions of their
+   Table 2 are reproduced in development/corriveau_trust.py as cited published values.
+
+3. Li et al. (2026), Borderline Personality Disorder and Emotion Dysregulation 13, 2: no data or code are
+   used; the BART-ET design is simulated from the published description.

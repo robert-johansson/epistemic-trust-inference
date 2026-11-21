@@ -1,0 +1,32 @@
+
+=== BPD (n = 50)
+  representation: intent {I,C} vs competitiveness {Beta,M1-M4,H}     intent: freq 0.25 xp 0.000 pxp 0.067  competitiveness: freq 0.75 xp 1.000 pxp 0.933  BOR 0.133
+  coupling within competitiveness: {M1,H} vs M4                      coupled: freq 0.63 xp 0.966 pxp 0.613  uncoupled: freq 0.37 xp 0.034 pxp 0.387  BOR 0.758
+  coupling within intent: C vs I                                     coupled: freq 0.31 xp 0.002 pxp 0.237  uncoupled: freq 0.69 xp 0.998 pxp 0.763  BOR 0.471
+  contagion contrasts (values for the model WITH contagion):
+    M3 vs M4 (competitiveness, no insertion)     freq 0.36  pxp 0.391  BOR 0.772  sum log BF +6.7  median log BF -0.26  share log BF > 0 32%
+    M1 vs M2 (competitiveness, insertion)        freq 0.45  pxp 0.456  BOR 0.845  sum log BF -0.1  median log BF -0.04  share log BF > 0 34%
+    C vs I (intent)                              freq 0.31  pxp 0.237  BOR 0.471  sum log BF -97.2  median log BF -0.38  share log BF > 0 40%
+
+=== Controls (n = 53)
+  representation: intent {I,C} vs competitiveness {Beta,M1-M4,H}     intent: freq 0.59 xp 0.914 pxp 0.591  competitiveness: freq 0.41 xp 0.086 pxp 0.409  BOR 0.780
+  coupling within competitiveness: {M1,H} vs M4                      coupled: freq 0.83 xp 1.000 pxp 0.991  uncoupled: freq 0.17 xp 0.000 pxp 0.009  BOR 0.018
+  coupling within intent: C vs I                                     coupled: freq 0.58 xp 0.873 pxp 0.570  uncoupled: freq 0.42 xp 0.127 pxp 0.430  BOR 0.811
+  contagion contrasts (values for the model WITH contagion):
+    M3 vs M4 (competitiveness, no insertion)     freq 0.79  pxp 0.919  BOR 0.161  sum log BF +182.8  median log BF -0.09  share log BF > 0 49%
+    M1 vs M2 (competitiveness, insertion)        freq 0.82  pxp 0.936  BOR 0.129  sum log BF +105.9  median log BF -0.04  share log BF > 0 45%
+    C vs I (intent)                              freq 0.58  pxp 0.570  BOR 0.811  sum log BF +56.4  median log BF +0.48  share log BF > 0 66%
+
+=== Insertion family including Beta (the beta-only version of M1): {M1,M2,Beta} vs {M3,M4}
+  BPD      insertion freq 0.4647 pxp 0.4695 | no insertion freq 0.5353 pxp 0.5305 | BOR 0.8437
+  Controls insertion freq 0.3048 pxp 0.3056 | no insertion freq 0.6952 pxp 0.6944 | BOR 0.6100
+
+=== Between-group: posterior probability that BPD and controls differ in frequencies (Rigoux et al., 2014)
+  comparison                                    exact  variational
+  contagion: M3 vs M4                          0.8979       0.8165
+  contagion: M1 vs M2                          0.7286       0.5487
+  contagion: C vs I                            0.6986       0.6124
+  contagion family {M1,M3} vs {M2,M4}          0.8949       0.8017
+  representation {I,C} vs {Beta,M1-M4,H}       0.9155       0.8875
+  coupling {M1,H} vs M4                        0.5267       0.3937
+  insertion {M1,M2,Beta} vs {M3,M4}            0.4055       0.2858

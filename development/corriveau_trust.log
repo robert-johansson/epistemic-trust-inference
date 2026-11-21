@@ -1,0 +1,14 @@
+full model                         params 8  -logL  3089.32  AIC  6194.63  r = 0.84  RMSE = 0.065
+lesion: one trust for all groups   params 5  -logL  3111.46  AIC  6232.92  r = 0.58  RMSE = 0.097
+lesion: no within-task learning    params 8  -logL  3125.57  AIC  6267.15  r = 0.74  RMSE = 0.080
+
+Identified quantity, mother advantage log[(1-ts)/(1-tm)] by group: avoidant +0.31, secure +1.05, resistant +2.00, disorganized +0.77
+Full model: trust in mother by group: avoidant 0.98, secure 0.99, resistant 1.00, disorganized 0.99 | trust in stranger 0.97; beta 1.09; beta_ask 1.93; 75-25 picture strength 0.65
+
+cell                            avoidant                secure             resistant          disorganized
+novel ask            obs 0.59  pred 0.57   obs 0.71  pred 0.69   obs 0.74  pred 0.78   obs 0.63  pred 0.65
+novel endorse        obs 0.57  pred 0.54   obs 0.63  pred 0.63   obs 0.75  pred 0.70   obs 0.62  pred 0.60
+50-50 ask            obs 0.52  pred 0.56   obs 0.66  pred 0.67   obs 0.64  pred 0.74   obs 0.56  pred 0.63
+50-50 endorse        obs 0.43  pred 0.54   obs 0.63  pred 0.63   obs 0.81  pred 0.70   obs 0.48  pred 0.60
+75-25 ask            obs 0.32  pred 0.37   obs 0.48  pred 0.48   obs 0.64  pred 0.62   obs 0.56  pred 0.43
+75-25 endorse        obs 0.48  pred 0.37   obs 0.40  pred 0.45   obs 0.53  pred 0.56   obs 0.48  pred 0.41

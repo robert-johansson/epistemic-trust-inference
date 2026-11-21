@@ -1,0 +1,13 @@
+g1 Beta: max |netp diff| 6.66e-16   max |loglik diff| 1.42e-14   (0.2s incl. reference)
+g1 M2  : max |netp diff| 1.78e-15   max |loglik diff| 8.53e-14   (5.7s incl. reference)
+g1 M1  : max |netp diff| 1.44e-15   max |loglik diff| 7.11e-14   (5.7s incl. reference)
+g1 M3  : max |netp diff| 1.22e-15   max |loglik diff| 4.26e-14   (5.7s incl. reference)
+g1 M4  : max |netp diff| 1.11e-15   max |loglik diff| 2.13e-14   (5.7s incl. reference)
+g2 Beta: max |netp diff| 5.55e-16   max |loglik diff| 1.42e-14   (0.1s incl. reference)
+g2 M2  : max |netp diff| 1.11e-15   max |loglik diff| 1.85e-13   (5.9s incl. reference)
+g2 M1  : max |netp diff| 1.44e-15   max |loglik diff| 2.84e-14   (5.9s incl. reference)
+g2 M3  : max |netp diff| 9.99e-16   max |loglik diff| 9.24e-14   (5.9s incl. reference)
+g2 M4  : max |netp diff| 2.39e-15   max |loglik diff| 5.26e-13   (5.9s incl. reference)
+
+memo M1 log-likelihood, one participant: 75 ms per call (jitted, CPU)
+ALL WITHIN 1e-9: True

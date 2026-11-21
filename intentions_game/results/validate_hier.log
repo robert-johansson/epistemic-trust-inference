@@ -1,0 +1,18 @@
+00Etx6       q=(15.0, 0.0, 5.0, 8.0, 3.0, 6.0): max |spec - factorised| = 6.66e-16
+00Etx6       q=(10.0, -10.0, 4.0, 6.0, 1.0, 1.0): max |spec - factorised| = 8.88e-16
+00Etx6       q=(20.0, 5.0, 6.0, 10.0, 60.0, 60.0): max |spec - factorised| = 5.55e-16
+00Etx6       q=(5.0, 15.0, 2.0, 3.0, 8.0, 15.0): max |spec - factorised| = 5.55e-16
+v2AdTI       q=(15.0, 0.0, 5.0, 8.0, 3.0, 6.0): max |spec - factorised| = 5.55e-16
+v2AdTI       q=(10.0, -10.0, 4.0, 6.0, 1.0, 1.0): max |spec - factorised| = 5.55e-16
+v2AdTI       q=(20.0, 5.0, 6.0, 10.0, 60.0, 60.0): max |spec - factorised| = 5.55e-16
+v2AdTI       q=(5.0, 15.0, 2.0, 3.0, 8.0, 15.0): max |spec - factorised| = 5.55e-16
+2VnUegyFae   q=(15.0, 0.0, 5.0, 8.0, 3.0, 6.0): max |spec - factorised| = 5.55e-16
+2VnUegyFae   q=(10.0, -10.0, 4.0, 6.0, 1.0, 1.0): max |spec - factorised| = 5.55e-16
+2VnUegyFae   q=(20.0, 5.0, 6.0, 10.0, 60.0, 60.0): max |spec - factorised| = 7.22e-16
+2VnUegyFae   q=(5.0, 15.0, 2.0, 3.0, 8.0, 15.0): max |spec - factorised| = 4.44e-16
+zjrwpk9lxT   q=(15.0, 0.0, 5.0, 8.0, 3.0, 6.0): max |spec - factorised| = 7.77e-16
+zjrwpk9lxT   q=(10.0, -10.0, 4.0, 6.0, 1.0, 1.0): max |spec - factorised| = 5.55e-16
+zjrwpk9lxT   q=(20.0, 5.0, 6.0, 10.0, 60.0, 60.0): max |spec - factorised| = 9.44e-16
+zjrwpk9lxT   q=(5.0, 15.0, 2.0, 3.0, 8.0, 15.0): max |spec - factorised| = 6.66e-16
+
+WORST: 9.44e-16  ->  AGREE

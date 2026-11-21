@@ -1,0 +1,97 @@
+% Fig. 6 -- Simulated epistemic stances in the BART-ET advisor model (Section 5.3).
+% Data: data/fig6_*.csv (scripts/export_fig6_bart.py). Build: xelatex.
+% Encoding: hue = expected reliability of the advisor (green trusting, violet mistrusting);
+%           dashed = the expectation is held rigidly. Hue and dash together, never hue alone.
+\documentclass[border=0pt]{standalone}
+\input{figstyle}
+
+\begin{document}
+\figfont
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (504pt,300pt);
+
+  % ======================= A: belief trajectories =======================
+  \begin{axis}[paper axis, name=A, at={(36pt,176pt)}, anchor=south west,
+      width=400pt, height=96pt,
+      xmin=0, xmax=30, ymin=0, ymax=1,
+      xtick={0,5,10,15,20,25,30}, ytick={0,0.25,0.5,0.75,1}, yticklabels={0,.25,.50,.75,1},
+      xmajorgrids=false,
+      xlabel={Balloon (second round)}, xlabel style={yshift=2pt},
+      ylabel={Believed reliability}, ylabel style={yshift=-2pt},
+      legend columns=4,
+      legend style={at={(0.5,1.04)}, anchor=south, /tikz/every even column/.append style={column sep=9pt}},
+      legend image code/.code={\draw[#1] (0pt,0pt) -- (14pt,0pt);},
+    ]
+    % misleading advice: balloons 4-6 (reported) and four late balloons (positions assumed)
+    \foreach \lo/\hi in {3/6, 14/15, 19/20, 23/24, 27/28} {
+      \edef\band{\noexpand\addplot[draw=none, fill=bandFill, forget plot]
+        coordinates {(\lo,1) (\hi,1)} \noexpand\closedcycle;}
+      \band
+    }
+    \addplot[stanceTrust]                table[x=balloon, y=trusting,    col sep=comma] {data/fig6_beliefs.csv};
+    \addlegendentry{trusting}
+    \addplot[stanceTrust, rigid]         table[x=balloon, y=credulous,   col sep=comma] {data/fig6_beliefs.csv};
+    \addlegendentry{credulous (rigid)}
+    \addplot[stanceMistrust]             table[x=balloon, y=mistrusting, col sep=comma] {data/fig6_beliefs.csv};
+    \addlegendentry{mistrusting}
+    \addplot[stanceMistrust, rigid]      table[x=balloon, y=petrified,   col sep=comma] {data/fig6_beliefs.csv};
+    \addlegendentry{petrified (rigid)}
+
+    % band notes, in the empty lower region
+    \node[note, anchor=south] at (axis cs:4.5,0.03) {misleading};
+    \node[note, anchor=south] at (axis cs:21.5,0.03) {misleading (positions assumed)};
+
+    % direct end labels with leader lines (values at balloon 30: .87, .80, .71, .37)
+    \coordinate (eC) at (axis cs:30,0.871);  \coordinate (lC) at (axis cs:30,0.93);
+    \coordinate (eT) at (axis cs:30,0.802);  \coordinate (lT) at (axis cs:30,0.80);
+    \coordinate (eM) at (axis cs:30,0.707);  \coordinate (lM) at (axis cs:30,0.67);
+    \coordinate (eP) at (axis cs:30,0.371);  \coordinate (lP) at (axis cs:30,0.37);
+  \end{axis}
+  \foreach \e/\l/\txt in {eC/lC/credulous, eT/lT/trusting, eM/lM/mistrusting, eP/lP/petrified} {
+    \draw[hairline, inkMuted] (\e) -- ([xshift=6pt]\l);
+    \node[note, text=inkPrimary, anchor=west] at ([xshift=6.5pt]\l) {\txt};
+  }
+
+  % ======================= B: hot stove =======================
+  \begin{axis}[paper axis, name=B, at={(36pt,34pt)}, anchor=south west,
+      width=190pt, height=86pt,
+      xmin=-0.5, xmax=9.5, ymin=0.40, ymax=0.70,
+      xtick={0,...,9}, ytick={0.4,0.5,0.6,0.7}, yticklabels={.40,.50,.60,.70},
+      xmajorgrids=false,
+      xlabel={Pumps entered (advice: 6)}, xlabel style={yshift=2pt},
+      ylabel={Belief after a safe balloon}, ylabel style={yshift=-2pt},
+      title={Acting on advice is how it is tested},
+    ]
+    \addplot[hairline, inkMuted, forget plot] coordinates {(-0.5,0.5) (9.5,0.5)};
+    \node[note, anchor=south east] at (axis cs:9.4,0.5) {before: .50};
+    \addplot[inkPrimary] table[x=pumps, y=belief, col sep=comma] {data/fig6_hotstove.csv};
+    \addplot[only marks, mark=*, mark size=1.9pt, inkPrimary, mark options={draw=white, line width=0.7pt}]
+      table[x=pumps, y=belief, col sep=comma] {data/fig6_hotstove.csv};
+    \node[note, text=inkPrimary, anchor=north, yshift=-3pt] at (axis cs:2,0.477) {.48};
+    \node[note, text=inkPrimary, anchor=south east, xshift=-2pt, yshift=2pt] at (axis cs:6,0.66) {followed: .66};
+  \end{axis}
+
+  % ======================= C: deviation depends on the advice =======================
+  \begin{axis}[paper axis, name=C, at={(302pt,34pt)}, anchor=south west,
+      width=196pt, height=86pt,
+      xmin=1.6, xmax=8.4, ymin=0, ymax=4.3,
+      xtick={2,...,8}, ytick={0,1,2,3,4},
+      xmajorgrids=false,
+      xlabel={Advised pumps}, xlabel style={yshift=2pt},
+      ylabel={Expected \(|\text{pumps} - \text{advice}|\)}, ylabel style={yshift=-2pt},
+      title={Deviation depends on the advice},
+      legend style={at={(0.02,0.98)}, anchor=north west, row sep=-1pt},
+      legend image code/.code={\draw[#1] (0pt,0pt) -- (14pt,0pt);},
+    ]
+    \addplot[stanceMistrust, rigid] table[x=advice, y=certain_unreliable, col sep=comma] {data/fig6_deviation.csv};
+    \addlegendentry{certain: unreliable (\(r = .1\))}
+    \addplot[stanceTrust, rigid]    table[x=advice, y=certain_reliable,   col sep=comma] {data/fig6_deviation.csv};
+    \addlegendentry{certain: reliable (\(r = .9\))}
+  \end{axis}
+
+  % ======================= panel letters =======================
+  \node[panel label] at (0pt,300pt) {A};
+  \node[panel label] at (0pt,144pt) {B};
+  \node[panel label] at (262pt,144pt) {C};
+\end{tikzpicture}
+\end{document}

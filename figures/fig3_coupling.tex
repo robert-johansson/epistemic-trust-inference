@@ -1,0 +1,69 @@
+% Fig. 3 -- One parameter controls both directions of self-other transfer (Section 4.4).
+% Data: data/fig3_coupling.csv (scripts/export_fig3_coupling.py). Build: xelatex (see README).
+\documentclass[border=0pt]{standalone}
+\input{figstyle}
+\pgfplotsset{
+  coupling axis/.style={
+    paper axis,
+    width=196pt, height=112pt,
+    log basis x=2,
+    xmin=0.42, xmax=76,
+    xtick={0.5,1,2,4,8,16,32,64},
+    xticklabels={0.5,1,2,4,8,16,32,64},
+    xminorticks=false,
+    grid=major,
+    xmajorgrids=false,
+  },
+}
+
+\begin{document}
+\figfont
+\begin{tikzpicture}
+  % fixed canvas: exactly the template's \textwidth
+  \useasboundingbox (0,0) rectangle (504pt,180pt);
+
+
+  % ---------------- A: self -> other (insertion) ----------------
+  \begin{loglogaxis}[coupling axis, name=A, at={(40pt,44pt)}, anchor=south west,
+      ymin=0.85, ymax=26,
+      ytick={1,2,5,10,20}, yticklabels={1,2,5,10,20}, yminorticks=false,
+      log ticks with fixed point,
+      ylabel={Precision of prior over partner (\(\times\) flat)},
+      ylabel style={yshift=-2pt},
+      title={Self \(\rightarrow\) other: self-insertion},
+    ]
+    \addplot[inkPrimary] table[x=tau, y=insertion, col sep=comma] {data/fig3_coupling.csv};
+    % endpoints cited in the text
+    \addplot[only marks, mark=*, mark size=2.2pt, inkPrimary, mark options={draw=white, line width=0.8pt}]
+      coordinates {(0.5,18.33) (64,1.03)};
+    \node[note, text=inkPrimary, anchor=south west, xshift=2.5pt, yshift=1.5pt] at (axis cs:0.5,18.33) {\(18\times\)};
+    \node[note, text=inkPrimary, anchor=south east, xshift=-2.5pt, yshift=2pt] at (axis cs:64,1.03) {flat};
+  \end{loglogaxis}
+
+  % ---------------- B: other -> self (contagion) ----------------
+  \begin{semilogxaxis}[coupling axis, name=B, at={(304pt,44pt)}, anchor=south west,
+      ymin=-0.05, ymax=1.08,
+      ytick={0,0.25,0.5,0.75,1}, yticklabels={0,.25,.50,.75,1},
+      ylabel={Share of partner information adopted},
+      ylabel style={yshift=-2pt},
+      title={Other \(\rightarrow\) self: social contagion},
+    ]
+    \addplot[inkPrimary] table[x=tau, y=contagion, col sep=comma] {data/fig3_coupling.csv};
+    \addplot[only marks, mark=*, mark size=2.2pt, inkPrimary, mark options={draw=white, line width=0.8pt}]
+      coordinates {(0.5,0.970) (64,0.000)};
+    \node[note, text=inkPrimary, anchor=south west, xshift=2.5pt, yshift=1.5pt] at (axis cs:0.5,0.970) {.97};
+    \node[note, text=inkPrimary, anchor=south east, xshift=-2.5pt, yshift=2pt] at (axis cs:64,0.000) {0};
+  \end{semilogxaxis}
+
+  % ---------------- shared x-axis wording (nodes, so nothing overlaps) ----------------
+  \foreach \p in {A,B} {
+    \node[note, anchor=north west] at ([yshift=-14pt]\p.south west) {\(\leftarrow\) people assumed alike};
+    \node[note, anchor=north east] at ([yshift=-14pt]\p.south east) {people assumed to differ \(\rightarrow\)};
+    \node[font=\figfont, text=inkPrimary, anchor=north] at ([yshift=-25pt]\p.south) {Population spread \(\tau\) (log scale)};
+  }
+
+  % ---------------- panel letters ----------------
+  \node[panel label] at (0pt,180pt) {A};
+  \node[panel label] at (266pt,180pt) {B};
+\end{tikzpicture}
+\end{document}

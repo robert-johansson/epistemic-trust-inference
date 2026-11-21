@@ -1,0 +1,24 @@
+
+=== BPD (n = 50); converged with positive-definite Hessian: 1.000
+  Laplace + RFX-BMS  expected frequency: Beta=0.192  M2=0.201  M1=0.067  M3=0.209  M4=0.330
+                     exceedance prob.:    Beta=0.052  M2=0.068  M1=0.000  M3=0.084  M4=0.795
+  best model per participant (counts):    Beta=12  M2=9  M1=5  M3=8  M4=16
+  authors' HBI       model frequency:     Beta=0.079  M2=0.000  M1=0.000  M3=0.385  M4=0.535
+                     exceedance prob.:    Beta=0.000  M2=0.000  M1=0.000  M3=0.137  M4=0.863
+  fixed-effects summed log evidence:      Beta=-3228.155  M2=-2664.484  M1=-2664.554  M3=-2603.302  M4=-2609.985
+  MAP vs HBI parameters for M4 (Spearman rho): alpha=0.97  beta=0.97  alpha_v=0.85  beta_v=0.87  alpha_par=0.92  beta_par=0.95  alpha_v_ref=0.46  beta_v_ref=0.94
+
+=== Controls (n = 53); converged with positive-definite Hessian: 1.000
+  Laplace + RFX-BMS  expected frequency: Beta=0.068  M2=0.085  M1=0.292  M3=0.440  M4=0.115
+                     exceedance prob.:    Beta=0.000  M2=0.000  M1=0.090  M3=0.910  M4=0.000
+  best model per participant (counts):    Beta=6  M2=12  M1=12  M3=10  M4=13
+  authors' HBI       model frequency:     Beta=0.092  M2=0.000  M1=0.590  M3=0.318  M4=0.000
+                     exceedance prob.:    Beta=0.000  M2=0.000  M1=0.981  M3=0.019  M4=0.000
+  fixed-effects summed log evidence:      Beta=-3411.874  M2=-2439.134  M1=-2333.236  M3=-2298.439  M4=-2481.205
+  MAP vs HBI parameters for M1 (Spearman rho): alpha=0.95  beta=0.97  alpha_v=0.84  beta_v=0.80  alpha_v_ref=0.74  beta_v_ref=0.92
+
+=== Family-level comparison (Laplace + RFX-BMS)
+  BPD      contagion (personally relevant)  yes: freq=0.47 xp=0.344  no: freq=0.53 xp=0.656
+  BPD      self-insertion (generalizable)   yes: freq=0.46 xp=0.305  no: freq=0.54 xp=0.695
+  Controls contagion (personally relevant)  yes: freq=0.73 xp=1.000  no: freq=0.27 xp=0.000
+  Controls self-insertion (generalizable)   yes: freq=0.30 xp=0.001  no: freq=0.70 xp=0.999

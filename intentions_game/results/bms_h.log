@@ -1,0 +1,22 @@
+
+=== BPD (n = 50); H fits ok: 1.000
+  6-model RFX-BMS  frequency: Beta=0.178  M2=0.138  M1=0.049  M3=0.132  M4=0.289  H=0.214
+                   xp:        Beta=0.071  M2=0.018  M1=0.000  M3=0.014  M4=0.715  H=0.181
+  best per participant:       Beta=12  M2=9  M1=4  M3=6  M4=16  H=3
+  H vs M1: median log BF = +0.14; H better for 62% (|log BF| > 1: 22% for H, 6% for M1); RFX freq H = 0.81, xp = 1.000; summed log BF = +70.5
+  H vs M3: median log BF = +0.47; H better for 62% (|log BF| > 1: 28% for H, 14% for M3); RFX freq H = 0.71, xp = 0.999; summed log BF = +9.2
+  H vs M4: median log BF = +0.41; H better for 60% (|log BF| > 1: 28% for H, 18% for M4); RFX freq H = 0.63, xp = 0.968; summed log BF = +15.9
+  fitted tau (median [IQR]): alpha 1.14 [0.67, 6.83]; beta 5.77 [2.51, 11.87]
+
+=== Controls (n = 53); H fits ok: 1.000
+  6-model RFX-BMS  frequency: Beta=0.065  M2=0.072  M1=0.096  M3=0.225  M4=0.085  H=0.458
+                   xp:        Beta=0.000  M2=0.000  M1=0.000  M3=0.013  M4=0.000  H=0.987
+  best per participant:       Beta=6  M2=7  M1=6  M3=6  M4=10  H=18
+  H vs M1: median log BF = +0.08; H better for 62% (|log BF| > 1: 13% for H, 8% for M1); RFX freq H = 0.64, xp = 0.983; summed log BF = +32.9
+  H vs M3: median log BF = +0.39; H better for 70% (|log BF| > 1: 25% for H, 15% for M3); RFX freq H = 0.67, xp = 0.994; summed log BF = -1.9
+  H vs M4: median log BF = +0.63; H better for 64% (|log BF| > 1: 42% for H, 13% for M4); RFX freq H = 0.80, xp = 1.000; summed log BF = +180.8
+  fitted tau (median [IQR]): alpha 4.20 [1.01, 8.98]; beta 4.77 [1.89, 8.86]
+
+BPD vs controls, log tau_alpha: Mann-Whitney U = 1017, p = 0.042
+
+BPD vs controls, log tau_beta: Mann-Whitney U = 1523, p = 0.192

@@ -1,0 +1,5 @@
+test,group,family,share,lo,hi,pxp,bor
+representation,BPD,intent,0.2498,0.1431,0.3747,0.0667,0.1333
+coupling,BPD,coupled,0.6251,0.4909,0.7503,0.6127,0.7584
+representation,Controls,intent,0.5909,0.4595,0.7160,0.5910,0.7801
+coupling,Controls,coupled,0.8334,0.7252,0.9187,0.9909,0.0182

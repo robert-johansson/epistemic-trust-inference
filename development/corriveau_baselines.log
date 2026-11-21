@@ -1,0 +1,13 @@
+1. All 24 cells
+  memo model (8 params)                                -logL  3089.32  AIC   6194.63  r =  0.84  RMSE = 0.065
+  additive A: group + task (6)                         -logL  3093.73  AIC   6199.46  r =  0.86  RMSE = 0.060
+  additive B: + question (7)                           -logL  3088.28  AIC   6190.55  r =  0.86  RMSE = 0.060
+  additive C: + task x question (9)                    -logL  3087.94  AIC   6193.87  r =  0.86  RMSE = 0.060
+
+2. Generalisation: fit novel + 50-50 (16 cells), predict 75-25 (8 cells)
+  memo model, picture strength fixed at .75: held-out 75-25 -logL   814.45  AIC            r =  0.65  RMSE = 0.120
+  additive A, unseen task = 50-50 level: held-out 75-25 -logL   869.62  AIC            r =  0.57  RMSE = 0.140
+
+  held-out 75-25 cells (observed / memo prediction):
+    75-25 ask       avoi 0.32/0.33  secu 0.48/0.43  resi 0.64/0.74  diso 0.56/0.36
+    75-25 endorse   avoi 0.48/0.35  secu 0.40/0.41  resi 0.53/0.70  diso 0.48/0.36

@@ -1,0 +1,60 @@
+% Fig. 4 -- Inferred intent predicts explicit attributions (Section 4.5).
+% Data: data/fig4_intent.csv (scripts/export_fig4_intent.py). Build: xelatex.
+\documentclass[border=0pt]{standalone}
+\input{figstyle}
+\pgfplotsset{
+  rating axis/.style={paper axis, width=124pt, height=110pt, xmajorgrids=false},
+}
+
+\begin{document}
+\figfont
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (504pt,196pt);
+
+  % ---------------- A: rating vs inferred harm ----------------
+  \begin{axis}[rating axis, name=A, at={(36pt,32pt)}, anchor=south west,
+      xmin=-1, xmax=24, ymin=-4, ymax=104,
+      xtick={0,5,10,15,20}, ytick={0,25,50,75,100},
+      xlabel={Expected harm (model I)}, xlabel style={yshift=2pt},
+      ylabel={Harmful-intent rating}, ylabel style={yshift=-2pt},
+      title={Inferred intent\\{\color{inkSecondary}\ticksize \(r_s = .54\)}},
+    ]
+    \addplot[group dots=groupControls, only rows={group}{Controls}] table[x=harm, y=HI, col sep=comma] {data/fig4_intent.csv};
+    \addplot[group dots=groupBPD, only rows={group}{BPD}]           table[x=harm, y=HI, col sep=comma] {data/fig4_intent.csv};
+  \end{axis}
+
+  % ---------------- B: rating vs count of harmful choices ----------------
+  \begin{axis}[rating axis, name=B, at={(204pt,32pt)}, anchor=south west,
+      xmin=-0.03, xmax=0.7, ymin=-4, ymax=104,
+      xtick={0,0.2,0.4,0.6}, xticklabels={0,.20,.40,.60}, ytick={0,25,50,75,100},
+      xlabel={Share of harmful choices}, xlabel style={yshift=2pt},
+      ylabel={Harmful-intent rating}, ylabel style={yshift=-2pt},
+      title={Counting harmful choices\\{\color{inkSecondary}\ticksize \(r_s = .52\)}},
+    ]
+    \addplot[group dots=groupControls, only rows={group}{Controls}] table[x=harm_cue, y=HI, col sep=comma] {data/fig4_intent.csv};
+    \addplot[group dots=groupBPD, only rows={group}{BPD}]           table[x=harm_cue, y=HI, col sep=comma] {data/fig4_intent.csv};
+  \end{axis}
+
+  % ---------------- C: beyond the count (rank residuals) ----------------
+  \begin{axis}[rating axis, name=C, at={(372pt,32pt)}, anchor=south west,
+      xmin=-62, xmax=62, ymin=-62, ymax=62,
+      xtick={-50,0,50}, ytick={-50,0,50},
+      xlabel={Expected harm beyond the count}, xlabel style={yshift=2pt},
+      ylabel={Rating beyond the count}, ylabel style={yshift=-2pt},
+      title={Beyond the count\\{\color{inkSecondary}\ticksize partial \(r_s = .25\)}},
+    ]
+    \addplot[group dots=groupControls, only rows={group}{Controls}] table[x=harm_resid, y=HI_resid, col sep=comma] {data/fig4_intent.csv};
+    \addplot[group dots=groupBPD, only rows={group}{BPD}]           table[x=harm_resid, y=HI_resid, col sep=comma] {data/fig4_intent.csv};
+  \end{axis}
+
+  % ---------------- shared legend (nodes) and panel letters ----------------
+  \node[circle, fill=groupControls, draw=white, line width=0.5pt, inner sep=1.75pt] (kC) at (196pt,188pt) {};
+  \node[note, text=inkSecondary, anchor=west] (tC) at ([xshift=1pt]kC.east) {Controls (\(n = 53\))};
+  \node[circle, fill=groupBPD, draw=white, line width=0.5pt, inner sep=1.75pt] (kB) at ([xshift=12pt]tC.east) {};
+  \node[note, text=inkSecondary, anchor=west] at ([xshift=1pt]kB.east) {BPD (\(n = 50\))};
+
+  \node[panel label] at (0pt,172pt) {A};
+  \node[panel label] at (170pt,172pt) {B};
+  \node[panel label] at (338pt,172pt) {C};
+\end{tikzpicture}
+\end{document}

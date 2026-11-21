@@ -1,0 +1,18 @@
+=== 1. Model comparison: I vs. M4
+  BPD      median log BF(I - M4) = -0.38; I better for 36% (|log BF| > 1: I 16%, M4 34%); RFX I vs M4: freq 0.26, xp 0.000; fits ok 1.00
+           6-model RFX (Beta, M2, M1, M3, M4, I): freq 0.18 0.18 0.07 0.20 0.20 0.17 | xp 0.16 0.18 0.00 0.27 0.26 0.12
+  Controls median log BF(I - M4) = +0.62; I better for 66% (|log BF| > 1: I 43%, M4 25%); RFX I vs M4: freq 0.67, xp 0.995; fits ok 1.00
+           6-model RFX (Beta, M2, M1, M3, M4, I): freq 0.08 0.05 0.10 0.27 0.03 0.48 | xp 0.00 0.00 0.00 0.03 0.00 0.97
+
+=== 2. Out-of-sample attributions (n = 103)
+  PRIMARY   HI ~ harm    : rho = +0.54 (p = 0.000) | cue harm_cue: rho = +0.52 (p = 0.000) | model beyond cue: partial rho = +0.25 (p = 0.012)
+  PRIMARY   SI ~ e_omega : rho = +0.24 (p = 0.014) | cue self_cue: rho = +0.23 (p = 0.021) | model beyond cue: partial rho = +0.22 (p = 0.025)
+  SECONDARY HI ~ p_neg   : rho = +0.55 (p = 0.000) | cue harm_cue: rho = +0.52 (p = 0.000) | model beyond cue: partial rho = +0.26 (p = 0.009)
+
+=== 3. Benevolence prior (prior mean of rho)
+  PRIMARY   BPD vs controls (Mann-Whitney)   median BPD -0.10 vs controls +0.25       p = 0.371, FDR q = 0.392
+  PRIMARY   mu_rho ~ mistrust                rho = -0.09 (n = 100)                    p = 0.392, FDR q = 0.392
+  PRIMARY   mu_rho ~ persecution             rho = -0.12 (n = 100)                    p = 0.239, FDR q = 0.392
+  SECONDARY mu_rho ~ trust                   rho = +0.05 (n = 100)                    p = 0.611, FDR q = 0.629
+  SECONDARY mu_rho ~ credulity               rho = -0.08 (n = 100)                    p = 0.442, FDR q = 0.629
+  SECONDARY mu_rho ~ ctq                     rho = -0.05 (n = 100)                    p = 0.629, FDR q = 0.629

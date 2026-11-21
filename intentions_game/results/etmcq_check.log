@@ -1,0 +1,48 @@
+### group winners (default)
+group winners (BPD M4, controls M1) at HBI parameters (the preprint's approach); n = 100
+  Mistrust  vs |d alpha_par| pooled -0.20 (p=0.051) | BPD +0.29 (p=0.047) | controls +0.05 (p=0.713) | group-controlled +0.14 (p=0.180)
+  Mistrust  vs |d beta_par|  pooled -0.25 (p=0.014) | BPD +0.23 (p=0.115) | controls -0.14 (p=0.323) | group-controlled +0.05 (p=0.588)
+  Trust     vs |d alpha_par| pooled +0.11 (p=0.285) | BPD +0.19 (p=0.202) | controls +0.02 (p=0.882) | group-controlled +0.14 (p=0.165)
+  Trust     vs |d beta_par|  pooled +0.10 (p=0.306) | BPD +0.17 (p=0.243) | controls +0.02 (p=0.862) | group-controlled +0.09 (p=0.367)
+  Credulity vs |d alpha_par| pooled -0.26 (p=0.008) | BPD +0.17 (p=0.232) | controls -0.16 (p=0.253) | group-controlled -0.02 (p=0.821)
+  Credulity vs |d beta_par|  pooled -0.34 (p=0.000) | BPD -0.01 (p=0.929) | controls -0.34 (p=0.015) | group-controlled -0.19 (p=0.056)
+### common model M1, HBI params
+one model for everyone: M1 (hbi parameters); n = 100
+  Mistrust  vs |d alpha_par| pooled -0.20 (p=0.046) | BPD +0.34 (p=0.018) | controls +0.05 (p=0.713) | group-controlled +0.20 (p=0.043)
+  Mistrust  vs |d beta_par|  pooled -0.24 (p=0.014) | BPD +0.31 (p=0.031) | controls -0.14 (p=0.323) | group-controlled +0.09 (p=0.355)
+  Trust     vs |d alpha_par| pooled +0.07 (p=0.484) | BPD +0.14 (p=0.329) | controls +0.02 (p=0.882) | group-controlled +0.09 (p=0.376)
+  Trust     vs |d beta_par|  pooled +0.12 (p=0.230) | BPD +0.14 (p=0.346) | controls +0.02 (p=0.862) | group-controlled +0.09 (p=0.374)
+  Credulity vs |d alpha_par| pooled -0.29 (p=0.003) | BPD +0.15 (p=0.304) | controls -0.16 (p=0.253) | group-controlled -0.03 (p=0.805)
+  Credulity vs |d beta_par|  pooled -0.33 (p=0.001) | BPD -0.00 (p=0.983) | controls -0.34 (p=0.015) | group-controlled -0.17 (p=0.087)
+### common model M3, HBI params
+one model for everyone: M3 (hbi parameters); n = 100
+  Mistrust  vs |d alpha_par| pooled -0.25 (p=0.013) | BPD -0.03 (p=0.831) | controls -0.07 (p=0.647) | group-controlled -0.05 (p=0.614)
+  Mistrust  vs |d beta_par|  pooled +0.37 (p=0.000) | BPD +0.19 (p=0.183) | controls -0.06 (p=0.695) | group-controlled +0.09 (p=0.358)
+  Trust     vs |d alpha_par| pooled +0.08 (p=0.403) | BPD +0.21 (p=0.154) | controls -0.04 (p=0.787) | group-controlled +0.06 (p=0.560)
+  Trust     vs |d beta_par|  pooled -0.02 (p=0.805) | BPD +0.12 (p=0.427) | controls -0.09 (p=0.520) | group-controlled +0.03 (p=0.773)
+  Credulity vs |d alpha_par| pooled -0.23 (p=0.021) | BPD -0.05 (p=0.743) | controls -0.03 (p=0.813) | group-controlled -0.10 (p=0.309)
+  Credulity vs |d beta_par|  pooled +0.26 (p=0.010) | BPD +0.00 (p=0.981) | controls -0.06 (p=0.686) | group-controlled -0.02 (p=0.817)
+### common model M4, HBI params
+one model for everyone: M4 (hbi parameters); n = 100
+  Mistrust  vs |d alpha_par| pooled +0.17 (p=0.084) | BPD +0.29 (p=0.047) | controls -0.02 (p=0.872) | group-controlled +0.16 (p=0.108)
+  Mistrust  vs |d beta_par|  pooled +0.07 (p=0.493) | BPD +0.23 (p=0.115) | controls -0.03 (p=0.856) | group-controlled +0.08 (p=0.445)
+  Trust     vs |d alpha_par| pooled +0.06 (p=0.549) | BPD +0.19 (p=0.202) | controls -0.06 (p=0.657) | group-controlled +0.06 (p=0.522)
+  Trust     vs |d beta_par|  pooled +0.05 (p=0.591) | BPD +0.17 (p=0.243) | controls -0.08 (p=0.555) | group-controlled +0.05 (p=0.607)
+  Credulity vs |d alpha_par| pooled +0.03 (p=0.745) | BPD +0.17 (p=0.232) | controls -0.17 (p=0.223) | group-controlled -0.00 (p=0.976)
+  Credulity vs |d beta_par|  pooled -0.11 (p=0.289) | BPD -0.01 (p=0.929) | controls -0.26 (p=0.061) | group-controlled -0.14 (p=0.164)
+### common model M3, our fits
+one model for everyone: M3 (ours parameters); n = 100
+  Mistrust  vs |d alpha_par| pooled -0.11 (p=0.279) | BPD -0.06 (p=0.692) | controls +0.04 (p=0.762) | group-controlled -0.02 (p=0.834)
+  Mistrust  vs |d beta_par|  pooled -0.07 (p=0.484) | BPD +0.22 (p=0.130) | controls -0.18 (p=0.213) | group-controlled +0.02 (p=0.870)
+  Trust     vs |d alpha_par| pooled +0.05 (p=0.620) | BPD +0.09 (p=0.517) | controls -0.06 (p=0.681) | group-controlled +0.02 (p=0.850)
+  Trust     vs |d beta_par|  pooled +0.04 (p=0.682) | BPD +0.09 (p=0.561) | controls -0.02 (p=0.878) | group-controlled +0.04 (p=0.729)
+  Credulity vs |d alpha_par| pooled -0.25 (p=0.012) | BPD -0.28 (p=0.050) | controls -0.08 (p=0.555) | group-controlled -0.20 (p=0.044)
+  Credulity vs |d beta_par|  pooled -0.25 (p=0.011) | BPD -0.04 (p=0.805) | controls -0.37 (p=0.007) | group-controlled -0.22 (p=0.031)
+### common model H, our fits
+one model for everyone: H (ours parameters); n = 100
+  Mistrust  vs |d alpha_par| pooled -0.03 (p=0.734) | BPD +0.17 (p=0.240) | controls +0.08 (p=0.587) | group-controlled +0.14 (p=0.158)
+  Mistrust  vs |d beta_par|  pooled -0.07 (p=0.482) | BPD +0.18 (p=0.223) | controls -0.11 (p=0.450) | group-controlled +0.04 (p=0.717)
+  Trust     vs |d alpha_par| pooled +0.06 (p=0.574) | BPD -0.01 (p=0.972) | controls +0.02 (p=0.895) | group-controlled +0.03 (p=0.736)
+  Trust     vs |d beta_par|  pooled +0.06 (p=0.548) | BPD +0.06 (p=0.692) | controls -0.00 (p=0.984) | group-controlled +0.05 (p=0.625)
+  Credulity vs |d alpha_par| pooled -0.21 (p=0.038) | BPD -0.14 (p=0.334) | controls -0.11 (p=0.426) | group-controlled -0.10 (p=0.302)
+  Credulity vs |d beta_par|  pooled -0.29 (p=0.004) | BPD -0.07 (p=0.616) | controls -0.35 (p=0.011) | group-controlled -0.23 (p=0.019)

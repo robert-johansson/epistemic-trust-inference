@@ -1,0 +1,13 @@
+n = 103; fits ok 1.000; outcome = accuracy on phase-2 trials 28-54 (not fitted)
+
+R1_half (I vs M4)
+  BPD: rho +0.04 (p=0.794); intent n=19 0.778 vs competitiveness n=31 0.778 (p=0.920)
+  Controls: rho +0.19 (p=0.171); intent n=29 0.852 vs competitiveness n=24 0.815 (p=0.294)
+  group-controlled rho +0.11 (p=0.272)
+  share intent-represented: BPD 38%, controls 55%
+
+R2_half (C vs H)
+  BPD: rho +0.20 (p=0.167); intent n=11 0.852 vs competitiveness n=39 0.741 (p=0.015)
+  Controls: rho +0.33 (p=0.017); intent n=21 0.889 vs competitiveness n=32 0.778 (p=0.046)
+  group-controlled rho +0.26 (p=0.007)
+  share intent-represented: BPD 22%, controls 40%
