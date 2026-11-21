@@ -3,7 +3,7 @@
 Combines results/laplace_g*.npz (Beta, M2, M1, M3, M4) with results/laplace_g*_H.npz (H).
 Reports, per group:
   - random-effects BMS over all six models (expected frequencies, exceedance probabilities);
-  - the informative head-to-head, H vs. M1 (H is the exact version of M1): per-participant
+  - the informative head-to-head, H vs. M1 (M1 is a moment-matched shortcut of H): per-participant
     log Bayes factors (median, share > 0, share with |log BF| > 1) and a two-model RFX-BMS;
   - H vs. M3 and H vs. M4 for reference;
   - fitted coupling (population spread tau) by group.

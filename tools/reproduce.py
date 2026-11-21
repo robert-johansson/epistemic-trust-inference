@@ -49,8 +49,8 @@ ETMCQ = [("### group winners (default)", []),
          ("### common model M1, HBI params", ["M1", "hbi"]),
          ("### common model M3, HBI params", ["M3", "hbi"]),
          ("### common model M4, HBI params", ["M4", "hbi"]),
-         ("### common model M3, our fits", ["M3", "ours"]),
-         ("### common model H, our fits", ["H", "ours"])]
+         ("### common model M3, our fits", ["M3", "laplace"]),
+         ("### common model H, our fits", ["H", "laplace"])]
 FIGURE_EXPORTS = ["figures/scripts/export_fig3_coupling.py", "figures/scripts/export_fig4_intent.py",
                   "figures/scripts/export_fig5_form.py", "figures/scripts/export_fig6_bart.py"]
 

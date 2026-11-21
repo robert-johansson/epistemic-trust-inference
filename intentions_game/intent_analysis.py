@@ -97,6 +97,9 @@ if __name__ == "__main__":
               + " ".join(f"{x:.2f}" for x in f_all) + " | xp " + " ".join(f"{x:.2f}" for x in xp_all))
         for i, pid in enumerate(zi["ids"]):
             harm, e_om, p_neg, mu_rho = attributions(zi["params_I"][i], P[pid]["data"])
+            # P(rho < 0) equals 1 to within 1e-6 for more than half the sample; below that, the order of
+            # those values is floating-point noise that differs across platforms, so they are treated as ties.
+            p_neg = round(p_neg, 6)
             hc, sc = cues(P[pid]["data"])
             meta = P[pid]["meta"]
             num = lambda k: float(meta[k]) if meta[k] not in ("", "NA") else onp.nan

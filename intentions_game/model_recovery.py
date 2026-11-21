@@ -1,6 +1,6 @@
 """Model recovery for H vs. M1: can the comparison tell which model generated the data?
 
-H is the exact version of M1 (M1 is its moment-matched shortcut), so the two make similar
+M1 can be read as a moment-matched shortcut of H, so the two make similar
 predictions; this checks whether 126 trials suffice to tell them apart.
 
 Ground truth: every other one of the 103 participants (52 sets). M1 data come from the authors'

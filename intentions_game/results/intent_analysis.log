@@ -7,7 +7,7 @@
 === 2. Out-of-sample attributions (n = 103)
   PRIMARY   HI ~ harm    : rho = +0.54 (p = 0.000) | cue harm_cue: rho = +0.52 (p = 0.000) | model beyond cue: partial rho = +0.25 (p = 0.012)
   PRIMARY   SI ~ e_omega : rho = +0.24 (p = 0.014) | cue self_cue: rho = +0.23 (p = 0.021) | model beyond cue: partial rho = +0.22 (p = 0.025)
-  SECONDARY HI ~ p_neg   : rho = +0.55 (p = 0.000) | cue harm_cue: rho = +0.52 (p = 0.000) | model beyond cue: partial rho = +0.26 (p = 0.009)
+  SECONDARY HI ~ p_neg   : rho = +0.50 (p = 0.000) | cue harm_cue: rho = +0.52 (p = 0.000) | model beyond cue: partial rho = +0.16 (p = 0.103)
 
 === 3. Benevolence prior (prior mean of rho)
   PRIMARY   BPD vs controls (Mann-Whitney)   median BPD -0.10 vs controls +0.25       p = 0.371, FDR q = 0.392
